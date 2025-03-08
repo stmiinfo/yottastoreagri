@@ -1,0 +1,61 @@
+1. Homepage (Accueil)
+Headline:
+✅ "Remorques et Bennes Robustes pour Tous Vos Besoins Agricoles et Industriels !"
+
+Introduction:
+
+Découvrez notre large gamme de remorques et bennes de haute qualité, conçues pour répondre aux exigences des professionnels. Choisissez la capacité qui vous convient : 3000L, 4000L, 5000L ou 2T, 3T, 4T, 5T.
+
+🔹 Qualité supérieure | 🔹 Fabrication robuste | 🔹 Adapté à vos besoins
+
+📞 Contactez-nous dès aujourd’hui pour un devis personnalisé !
+
+2. Produits (Nos Produits)
+🔹 Remorques et Bennes Disponibles
+✔️ Capacités disponibles :
+
+Volume : 3000L | 4000L | 5000L
+Charge utile : 2 tonnes | 3 tonnes | 4 tonnes | 5 tonnes
+🔹 Caractéristiques Techniques
+✅ Structure en acier renforcé
+✅ Système d’attelage sécurisé
+✅ Basculement hydraulique (optionnel)
+✅ Peinture anti-corrosion
+✅ Pneus haute résistance
+
+📌 Usage recommandé : Transport agricole, travaux publics, manutention industrielle.
+
+3. Pourquoi Nous Choisir ? (Avantages)
+🔧 Qualité et robustesse : Matériaux résistants et conception fiable.
+🚛 Livraison rapide : Expédition dans toute la région.
+🔩 Personnalisation : Options disponibles selon vos besoins.
+💰 Meilleur rapport qualité/prix : Tarifs compétitifs.
+
+4. Contact (Nous Contacter)
+📍 Adresse : [Votre adresse]
+📞 Téléphone : [Votre numéro]
+📧 E-mail : [Votre e-mail]
+📆 Demandez un devis gratuit !
+-----------------------------------------
+carousel :<!-- Bootstrap Bundle (includes Popper.js) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+---------------------------------------------------
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    var myCarousel = new bootstrap.Carousel(document.querySelector("#carouselExample"), {
+      interval: 3000, // Auto-slide every 3 seconds
+      wrap: true
+    });
+  });
+</script>
+------------------------------------------------------
+footer stay down : 
+.footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background: #333;
+  color: white;
+  text-align: center;
+  padding: 10px;
+}
