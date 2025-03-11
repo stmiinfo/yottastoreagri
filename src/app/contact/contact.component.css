@@ -1,6 +1,7 @@
-@import "~leaflet/dist/leaflet.css";
+/* Import Leaflet CSS (remove the ~ if necessary) */
+@import "leaflet/dist/leaflet.css"; 
+
 #map {
-    height: 5px; /* Set a reasonable height for better visibility */
-    width: 30%;    /* 30% width of the parent container */
-  }
-  
+    height: 400px;  /* Set a reasonable height for better visibility */
+    width: 100%;    /* Set to full width or adjust as needed */
+}
