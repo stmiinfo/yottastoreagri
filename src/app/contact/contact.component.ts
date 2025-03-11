@@ -33,9 +33,10 @@ export class ContactComponent implements AfterViewInit {
         } else {
           console.error('Leaflet did not load properly.');
         }
-      }).catch(err => {
+      }).catch((err) => {
         console.error('Error loading Leaflet library:', err);
       });
     }
   }
 }
+
