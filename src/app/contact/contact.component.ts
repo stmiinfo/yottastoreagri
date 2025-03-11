@@ -16,17 +16,25 @@ export class ContactComponent implements AfterViewInit {
   ngAfterViewInit(): void {
     // Ensure Leaflet is loaded only in the browser (not during SSR)
     if (isPlatformBrowser(this.platformId)) {
+      // Dynamically import Leaflet library only for the client-side
       import('leaflet').then((L) => {
-        // Initialize the map with the updated coordinates
-        const map = L.map('map').setView([36.886750, 10.105075], 12);
+        // Check if the L object is properly loaded
+        if (L && L.map) {
+          // Initialize the map with the updated coordinates
+          const map = L.map('map').setView([36.886750, 10.105075], 12);
 
-        // Add OpenStreetMap tiles to the map
-        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-          attribution: '© OpenStreetMap contributors',
-        }).addTo(map);
+          // Add OpenStreetMap tiles to the map
+          L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '© OpenStreetMap contributors',
+          }).addTo(map);
 
-        // Add a marker at the new coordinates
-        L.marker([36.886750, 10.105075]).addTo(map);
+          // Add a marker at the new coordinates
+          L.marker([36.886750, 10.105075]).addTo(map);
+        } else {
+          console.error('Leaflet did not load properly.');
+        }
+      }).catch(err => {
+        console.error('Error loading Leaflet library:', err);
       });
     }
   }
