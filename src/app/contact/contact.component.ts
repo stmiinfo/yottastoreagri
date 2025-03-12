@@ -9,9 +9,8 @@ import { isPlatformBrowser } from '@angular/common';
   styleUrl: './contact.component.css'
 })
 export class ContactComponent implements AfterViewInit {
-
   @ViewChild('map')
-  mapElementRef: ElementRef = null!;
+  mapElementRef!: ElementRef;
 
   private _map: any = null;
 
@@ -20,12 +19,15 @@ export class ContactComponent implements AfterViewInit {
   async ngAfterViewInit(): Promise<void> {
     // Check if the code is running in the browser
     if (isPlatformBrowser(this.platformId)) {
-      // Lazy-load Leaflet only in the browser
-      const { Map, map, tileLayer } = await import('leaflet');
-      this._map = map(this.mapElementRef.nativeElement)
+      // Dynamically import Leaflet only in the browser
+      const L = await import('leaflet');
+
+      // Initialize the map
+      this._map = L.map(this.mapElementRef.nativeElement)
         .setView([46.801111, 8.226667], 8);
 
-      tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      // Add the tile layer
+      L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
         maxZoom: 19,
         attribution: '&copy; OpenStreetMap'
       }).addTo(this._map);
