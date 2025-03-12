@@ -1,48 +1,34 @@
-import { Component, AfterViewInit, Inject, PLATFORM_ID, NgZone } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, ViewChild, Inject, PLATFORM_ID } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 
 @Component({
   selector: 'app-contact',
   standalone: true,
-  template: `
-    <h1>Contact Us</h1>
-    <p>Visit us at our location:</p>
-    <div id="map" style="height: 400px; width: 100%;"></div>
-  `,
+  imports: [],
+  templateUrl: './contact.component.html',
+  styleUrl: './contact.component.css'
 })
 export class ContactComponent implements AfterViewInit {
-  constructor(@Inject(PLATFORM_ID) private platformId: Object, private ngZone: NgZone) {}
 
-  ngAfterViewInit(): void {
-    // Ensure Leaflet is loaded only in the browser (not during SSR)
+  @ViewChild('map')
+  mapElementRef: ElementRef = null!;
+
+  private _map: any = null;
+
+  constructor(@Inject(PLATFORM_ID) private platformId: Object) {}
+
+  async ngAfterViewInit(): Promise<void> {
+    // Check if the code is running in the browser
     if (isPlatformBrowser(this.platformId)) {
-      // Set a timeout to delay the map initialization
-      setTimeout(() => {
-        this.getMap(); // Function call after 2 seconds
-      }, 2000); // 2000 milliseconds delay
+      // Lazy-load Leaflet only in the browser
+      const { Map, map, tileLayer } = await import('leaflet');
+      this._map = map(this.mapElementRef.nativeElement)
+        .setView([46.801111, 8.226667], 8);
+
+      tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        maxZoom: 19,
+        attribution: '&copy; OpenStreetMap'
+      }).addTo(this._map);
     }
-  }
-
-  // Map initialization function
-  private getMap() {
-    import('leaflet').then((L) => {
-      // Check if the L object is properly loaded
-      if (L && L.map) {
-        // Initialize the map with the updated coordinates
-        const map = L.map('map').setView([36.886750, 10.105075], 12);
-
-        // Add OpenStreetMap tiles to the map
-        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-          attribution: '© OpenStreetMap contributors',
-        }).addTo(map);
-
-        // Add a marker at the new coordinates
-        L.marker([36.886750, 10.105075]).addTo(map);
-      } else {
-        console.error('Leaflet did not load properly.');
-      }
-    }).catch((err) => {
-      console.error('Error loading Leaflet library:', err);
-    });
   }
 }
