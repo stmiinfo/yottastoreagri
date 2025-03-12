@@ -1,34 +1,93 @@
-  <!-- Google Maps iframe -->
-  <div class="map-container">
-    <iframe
-      src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d6382.232015024127!2d10.108218498854951!3d36.88757295158462!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sar!2stn!4v1741776291418!5m2!1sar!2stn"
-      width="100%"
-      height="450"
-      style="border:0;"
-      allowfullscreen=""
-      loading="lazy"
-      referrerpolicy="no-referrer-when-downgrade">
-    </iframe>
-  </div>
-  <div class="contact-info">
-    <h2>Contact Information</h2>
-    <div class="contact-details">
-      <div class="contact-item">
-        <i class="fas fa-map-marker-alt"></i>
-        <strong>Address</strong>
-        <p>RTE BIZERTE KM 8 EL MNIHLA 2094</p>
-      </div>
-      <div class="contact-item">
-        <i class="fas fa-phone"></i>
-        <strong>Phone</strong>
-        <p>+216 31 404 174</p>
-        <p>+216 52 581 880</p>
-      </div>
-      <div class="contact-item">
-        <i class="fas fa-envelope"></i>
-        <strong>Email</strong>
-        <p><a href="">------------</a></p>
+<div class="centered-container">
+    <!-- Google Maps iframe -->
+    <div class="map-container">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d6382.232015024127!2d10.108218498854951!3d36.88757295158462!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sar!2stn!4v1741776291418!5m2!1sar!2stn"
+        width="100%"
+        height="100%"
+        style="border:0;"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    </div>
+  
+    <!-- Contact Information -->
+    <div class="contact-info">
+      <h2>Contact Information</h2>
+      <div class="contact-details">
+        <div class="contact-item">
+          <i class="fas fa-map-marker-alt"></i>
+          <strong>Address</strong>
+          <p>RTE BIZERTE KM 8 EL MNIHLA 2094</p>
+        </div>
+        <div class="contact-item">
+          <i class="fas fa-phone"></i>
+          <strong>Phone</strong>
+          <p>+216 31 404 174</p>
+          <p>+216 52 581 880</p>
+        </div>
+        <div class="contact-item">
+          <i class="fas fa-envelope"></i>
+          <strong>Email</strong>
+          <p><a href="">------------</a></p>
+        </div>
       </div>
     </div>
-  </div>
   
+    <!-- Form -->
+    <div class="container mt-5">
+      <h2 class="mb-4">Choix du contact <span class="text-danger">*</span></h2>
+      <form>
+        <!-- Country -->
+        <div class="mb-3">
+          <label for="country" class="form-label">Votre pays <span class="text-danger">*</span></label>
+          <select class="form-select" id="country" required>
+            <option value="" selected disabled>Sélectionnez votre pays</option>
+            <option value="france">France</option>
+            <option value="tunisia">Tunisie</option>
+            <option value="other">Autre</option>
+          </select>
+        </div>
+  
+        <!-- Company -->
+        <div class="mb-3">
+          <label for="company" class="form-label">Société</label>
+          <input type="text" class="form-control" id="company" placeholder="Nom de la société">
+        </div>
+  
+        <!-- Name and First Name -->
+        <div class="row mb-3">
+          <div class="col-md-6">
+            <label for="lastName" class="form-label">Nom <span class="text-danger">*</span></label>
+            <input type="text" class="form-control" id="lastName" placeholder="Nom" required>
+          </div>
+          <div class="col-md-6">
+            <label for="firstName" class="form-label">Prénom <span class="text-danger">*</span></label>
+            <input type="text" class="form-control" id="firstName" placeholder="Prénom" required>
+          </div>
+        </div>
+  
+        <!-- Email and Phone -->
+        <div class="row mb-3">
+          <div class="col-md-6">
+            <label for="email" class="form-label">Email <span class="text-danger">*</span></label>
+            <input type="email" class="form-control" id="email" placeholder="Email" required>
+          </div>
+          <div class="col-md-6">
+            <label for="phone" class="form-label">Téléphone</label>
+            <input type="tel" class="form-control" id="phone" placeholder="Téléphone">
+          </div>
+        </div>
+  
+        <!-- Message -->
+        <div class="mb-3">
+          <label for="message" class="form-label">Message <span class="text-danger">*</span></label>
+          <textarea class="form-control" id="message" rows="5" placeholder="Votre message" required></textarea>
+        </div>
+  
+        <!-- Submit Button -->
+        <button type="submit" class="btn btn-primary">Envoyer</button>
+      </form>
+    </div>
+  </div>
