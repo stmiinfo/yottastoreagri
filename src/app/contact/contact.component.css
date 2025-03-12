@@ -2,6 +2,61 @@
 @import "leaflet/dist/leaflet.css"; 
 
 #map {
-    height: 100vh;
-    width: 100vw;
+    height: 50vh;
+    width: 80vw;
 }
+.contact-info {
+    font-family: Arial, sans-serif;
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+  }
+  
+  .contact-info h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  .contact-details {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .contact-item {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+  
+  .contact-item strong {
+    font-size: 16px;
+    color: #555;
+  }
+  
+  .contact-item p {
+    margin: 0;
+    font-size: 14px;
+    color: #777;
+  }
+  
+  .contact-item a {
+    color: #0077b5;
+    text-decoration: none;
+  }
+  
+  .contact-item a:hover {
+    text-decoration: underline;
+  }
+  .map-container {
+    margin-top: 20px;
+    width: 100%;
+    height: 450px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
