@@ -1,0 +1,28 @@
+/* Ensure the carousel and card have a consistent background */
+.carousel {
+    background-color: transparent; /* Remove any background */
+  }
+  
+  .card {
+    background-color: #fff; /* Ensure the card has a white background */
+    border: 1px solid #ddd; /* Add a border for better visibility */
+  }
+  
+  /* Ensure the carousel images are displayed correctly */
+  .carousel-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px; /* Match the card's border radius */
+  }
+  .card:hover {
+    transform: translateY(-5px);
+    transition: transform 0.3s ease;
+  }
+  @media (max-width: 768px) {
+    .card {
+      padding: 15px;
+    }
+    .card-text {
+      font-size: 1rem;
+    }
+  }
