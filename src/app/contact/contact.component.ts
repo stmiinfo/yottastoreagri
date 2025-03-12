@@ -1,6 +1,5 @@
 import { AfterViewInit, Component, ElementRef, ViewChild, Inject, PLATFORM_ID } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
-import { Map, map, tileLayer } from 'leaflet';
 
 @Component({
   selector: 'app-contact',
@@ -11,20 +10,27 @@ import { Map, map, tileLayer } from 'leaflet';
 })
 export class ContactComponent implements AfterViewInit {
   @ViewChild('map')
-  mapElementRef: ElementRef = null!;
+  mapElementRef!: ElementRef;
 
-  public map: Map = null!;
+  public map: any = null;
 
-  ngAfterViewInit(): void {
+  constructor(@Inject(PLATFORM_ID) private platformId: Object) {}
 
-    this.map = map(this.mapElementRef.nativeElement)
+  async ngAfterViewInit(): Promise<void> {
+    // Check if the code is running in the browser
+    if (isPlatformBrowser(this.platformId)) {
+      // Dynamically import Leaflet only in the browser
+      const L = await import('leaflet');
+
+      // Initialize the map
+      this.map = L.map(this.mapElementRef.nativeElement)
         .setView([46.801111, 8.226667], 8);
 
-    tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      // Add the tile layer
+      L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
         maxZoom: 19,
-        // add a link to OpenStreetMap (omitted here for shorter line width)
         attribution: '&copy; OpenStreetMap'
-    }).addTo(this.map);
-
+      }).addTo(this.map);
+    }
   }
 }
