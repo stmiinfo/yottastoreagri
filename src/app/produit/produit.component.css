@@ -1,0 +1,66 @@
+body {
+    background-color: transparent; /* Ensure body background is transparent */
+    margin: 0; /* Remove default body margin */
+    padding: 0; /* Remove default body padding */
+  }
+  
+  /* The container around the cards should also have a transparent background */
+  .container {
+    background-color: transparent; /* Make the container transparent */
+    padding: 20px; /* Add some padding */
+  }
+  
+  /* Make the row a flex container to display cards side by side */
+  .row {
+    display: flex; /* Use flexbox to make cards sit side by side */
+    gap: 10px; /* Small gap between the cards */
+    flex-wrap: nowrap; /* Prevent cards from wrapping to the next line */
+    justify-content: flex-start; /* Align items to the left */
+  }
+  
+  /* The card should have a white background */
+  .card {
+    background-color: #fff; /* White background for the card */
+    border: 1px solid #ddd; /* Subtle border for the card */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Add shadow to the card */
+    width: 300px; /* Set a wider width for the card */
+    height: auto; /* Let the height adjust based on content */
+    text-align: center; /* Center-align card content */
+    padding: 10px; /* Add some padding inside the card */
+    display: flex; /* Use flexbox for internal layout */
+    flex-direction: column; /* Stack card content vertically */
+    justify-content: space-between; /* Distribute space evenly */
+  }
+  
+  /* Make the images circular and ensure they have the same height and width */
+  .card-img-top {
+    width: 120px; /* Set a slightly larger fixed width */
+    height: 120px; /* Set a slightly larger fixed height */
+    border-radius: 50%; /* Make the image circular */
+    object-fit: cover; /* Ensure the image covers the area without distortion */
+    margin: 0 auto; /* Center the image horizontally */
+    display: block; /* Ensure the image behaves as a block element */
+  }
+  
+  /* Adjust card body and list group to fit inside the card */
+  .card-body {
+    padding: 10px; /* Reduce padding inside the card body */
+    flex-grow: 1; /* Allow the card body to grow and fill space */
+  }
+  
+  .list-group {
+    margin-bottom: 0; /* Remove default margin */
+    border-top: 1px solid #ddd; /* Add a border to separate the list from the card body */
+  }
+  
+  .list-group-item {
+    border: none; /* Remove borders from list items */
+    padding: 8px 16px; /* Adjust padding for list items */
+    text-align: center; /* Center-align list items */
+  }
+  
+  /* Optional: Add a hover effect on the card */
+  .card:hover {
+    transform: translateY(-5px);
+    transition: transform 0.3s ease;
+  }
