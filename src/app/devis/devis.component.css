@@ -1,0 +1,44 @@
+/* Custom Form Styling */
+.container {
+    max-width: 600px; /* Limit the form width */
+    margin: 0 auto; /* Center the form */
+  }
+  
+  .card {
+    border-radius: 12px; /* Add rounded corners to the card */
+    border: 1px solid #e0e0e0; /* Add a subtle border */
+  }
+  
+  .card-body {
+    padding: 2rem; /* Add padding inside the card */
+  }
+  
+  .form-label {
+    font-weight: 500; /* Make labels bold */
+    margin-bottom: 8px; /* Add space below labels */
+  }
+  
+  .form-control, .form-select {
+    border-radius: 8px; /* Add rounded corners to inputs */
+    border: 1px solid #ddd; /* Add a subtle border */
+    padding: 10px; /* Add padding inside inputs */
+    font-size: 14px; /* Adjust font size */
+  }
+  
+  .form-control:focus, .form-select:focus {
+    border-color: #007bff; /* Change border color on focus */
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Add a glow effect on focus */
+  }
+  
+  .btn-primary {
+    background-color: #007bff; /* Primary button color */
+    border: none; /* Remove border */
+    padding: 10px 20px; /* Add padding */
+    font-size: 16px; /* Adjust font size */
+    border-radius: 8px; /* Add rounded corners */
+    transition: background-color 0.3s ease; /* Smooth hover transition */
+  }
+  
+  .btn-primary:hover {
+    background-color: #0056b3; /* Darker color on hover */
+  }

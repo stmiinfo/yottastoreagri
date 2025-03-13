@@ -4,6 +4,7 @@ import { HomeComponent } from './home/home.component'; // Import the HomeCompone
 import { NgModule } from '@angular/core';
 import { AboutComponent } from './about/about.component';
 import { ProduitComponent } from './produit/produit.component';
+import { DevisComponent } from './devis/devis.component';
 
 
 export const routes: Routes = [
@@ -11,6 +12,7 @@ export const routes: Routes = [
   { path: 'home', component: HomeComponent }, // Render HomeComponent on /home
   { path: 'contact', component: ContactComponent }, // Route for Contact
   { path: 'produit', component: ProduitComponent } ,
+  { path: 'devis', component: DevisComponent } ,
   { path: 'about', component: AboutComponent } ,
  
 ];
