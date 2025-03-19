@@ -1,65 +1,65 @@
 <!-- Form Wrapped in a Card -->
 <div class="container mt-5">
-    <div class="card shadow-sm">
-      <div class="card-body">
-        <h2 class="card-title mb-4">Demande de devis</h2>
-        <form>
-          <!-- Name -->
-          <div class="mb-3">
-            <label for="name" class="form-label">Nom <span class="text-danger">*</span></label>
-            <input type="text" class="form-control" id="name" placeholder="Veuillez renseigner ce champ." required>
-          </div>
-  
-          <!-- Email -->
-          <div class="mb-3">
-            <label for="email" class="form-label">Email <span class="text-danger">*</span></label>
-            <input type="email" class="form-control" id="email" placeholder="Veuillez renseigner ce champ." required>
-          </div>
-  
-          <!-- Phone -->
-          <div class="mb-3">
-            <label for="phone" class="form-label">Téléphone <span class="text-danger">*</span></label>
-            <input type="tel" class="form-control" id="phone" placeholder="Veuillez renseigner ce champ." required>
-          </div>
-  
-          <!-- Produit Section (Dropdown Select) -->
-          <div class="mb-3">
-            <label for="produit" class="form-label">Produit <span class="text-danger">*</span></label>
-            <select class="form-select" id="produit" required>
-              <option value="" selected disabled>Sélectionnez un produit</option>
-              <option value="Remorques">Remorques</option>
-              <option value="Benne">Benne</option>
-              <option value="anti-belier">Anti Bélier</option>
-              <option value="Bride">Bride</option>
-              <option value="charpente-metalique">charpente metalique</option>
-              <option value="citerne-de-stockage">citerne de stockage</option>
-              <option value="citerne-inox">citerne inox</option>
-              <option value="conteneur-bureau">conteneur bureau</option>
-              <option value="crepine">crepine</option>
-              <option value="element-de-colone">element de colone</option>
-              <option value="filter-a-sable">filter a sable</option>
-              <option value="joint-de-demontage">joint de demontage</option>
-              <option value="pinion">pinion</option>
-              <option value="remorque-citerne">remorque citerne</option>
-              <option value="separateur">separateur</option>
-            </select>
-          </div>
-  
-          <!-- Product Description -->
-          <div class="mb-3">
-            <label for="productDescription" class="form-label">Description du produit <span class="text-danger">*</span></label>
-            <textarea class="form-control" id="productDescription" rows="3" placeholder="Description" required></textarea>
-          </div>
-  
-          <!-- Message -->
-          <div class="mb-3">
-            <label for="message" class="form-label">Message <span class="text-danger">*</span></label>
-            <textarea class="form-control" id="message" rows="5" placeholder="Votre message" required></textarea>
-          </div>
-  
-          <!-- Submit Button -->
-          <button type="submit" class="btn btn-primary">Envoyer</button>
-        </form>
-      </div>
+  <div class="card shadow-sm">
+    <div class="card-body">
+      <h2 class="card-title mb-4">Demande de devis</h2>
+      <form (ngSubmit)="onSubmit()" #devisForm="ngForm">
+        <!-- Name -->
+        <div class="mb-3">
+          <label for="name" class="form-label">Nom <span class="text-danger">*</span></label>
+          <input type="text" class="form-control" id="name" placeholder="Veuillez renseigner ce champ." [(ngModel)]="formData.name" name="name" required>
+        </div>
+
+        <!-- Email -->
+        <div class="mb-3">
+          <label for="email" class="form-label">Email <span class="text-danger">*</span></label>
+          <input type="email" class="form-control" id="email" placeholder="Veuillez renseigner ce champ." [(ngModel)]="formData.email" name="email" required>
+        </div>
+
+        <!-- Phone -->
+        <div class="mb-3">
+          <label for="phone" class="form-label">Téléphone <span class="text-danger">*</span></label>
+          <input type="tel" class="form-control" id="phone" placeholder="Veuillez renseigner ce champ." [(ngModel)]="formData.phone" name="phone" required>
+        </div>
+
+        <!-- Produit Section (Dropdown Select) -->
+        <div class="mb-3">
+          <label for="produit" class="form-label">Produit <span class="text-danger">*</span></label>
+          <select class="form-select" id="produit" [(ngModel)]="formData.produit" name="produit" required>
+            <option value="" selected disabled>Sélectionnez un produit</option>
+            <option value="Remorques">Remorques</option>
+            <option value="Benne">Benne</option>
+            <option value="anti-belier">Anti Bélier</option>
+            <option value="Bride">Bride</option>
+            <option value="charpente-metalique">charpente metalique</option>
+            <option value="citerne-de-stockage">citerne de stockage</option>
+            <option value="citerne-inox">citerne inox</option>
+            <option value="conteneur-bureau">conteneur bureau</option>
+            <option value="crepine">crepine</option>
+            <option value="element-de-colone">element de colone</option>
+            <option value="filter-a-sable">filter a sable</option>
+            <option value="joint-de-demontage">joint de demontage</option>
+            <option value="pinion">pinion</option>
+            <option value="remorque-citerne">remorque citerne</option>
+            <option value="separateur">separateur</option>
+          </select>
+        </div>
+
+        <!-- Product Description -->
+        <div class="mb-3">
+          <label for="productDescription" class="form-label">Description du produit <span class="text-danger">*</span></label>
+          <textarea class="form-control" id="productDescription" rows="3" placeholder="Description" [(ngModel)]="formData.description" name="description" required></textarea>
+        </div>
+
+        <!-- Message -->
+        <div class="mb-3">
+          <label for="message" class="form-label">Message <span class="text-danger">*</span></label>
+          <textarea class="form-control" id="message" rows="5" placeholder="Votre message" [(ngModel)]="formData.message" name="message" required></textarea>
+        </div>
+
+        <!-- Submit Button -->
+        <button type="submit" class="btn btn-primary">Envoyer</button>
+      </form>
     </div>
   </div>
+</div>
