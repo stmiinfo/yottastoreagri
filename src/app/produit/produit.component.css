@@ -84,3 +84,13 @@ body {
     transform: translateY(-5px); /* Lift the card slightly */
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); /* Increase shadow on hover */
   }
+  /* Remove underline and default link styling */
+a.card {
+  text-decoration: none; /* Removes underline */
+  color: inherit; /* Inherits text color from parent */
+  display: block; /* Ensures the link behaves like a block element */
+}
+
+a.card:hover {
+  text-decoration: none; /* Ensures no underline on hover */
+}

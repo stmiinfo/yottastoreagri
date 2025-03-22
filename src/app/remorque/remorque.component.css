@@ -1,0 +1,214 @@
+/* General Styles */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .content_page {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .content {
+    flex: 3;
+    margin-right: 20px;
+  }
+  
+  .right {
+    flex: 1;
+  }
+  
+  /* Breadcrumb */
+  .fil_ariane {
+    margin-bottom: 20px;
+  }
+  
+  .fil_ariane a {
+    color: #007bff;
+    text-decoration: none;
+  }
+  
+  .fil_ariane a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Page Title */
+  .titre_page1 h1 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  /* Cards */
+  .card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    height: 100%; /* Ensure cards fill the height of their container */
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .card-img-top {
+    width: 100%;
+    height: 200px; /* Set a fixed height for all images */
+    object-fit: cover; /* Ensures the image covers the area without distortion */
+  }
+  
+  .card-body {
+    padding: 15px;
+    flex: 1; /* Allows the card body to grow and fill remaining space */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Distributes space between title, text, and other content */
+  }
+  
+  .card-title {
+    font-size: 18px;
+    color: #333;
+  }
+  
+  .card-text {
+    font-size: 14px;
+    color: #777;
+  }
+  
+  /* Pagination */
+  .bg_pag {
+    margin-top: 20px;
+  }
+  
+  .pagination {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .pagination .page-item {
+    margin: 0 5px;
+  }
+  
+  .pagination .page-link {
+    color: #007bff;
+    text-decoration: none;
+  }
+  
+  .pagination .page-link:hover {
+    text-decoration: underline;
+  }
+  
+  /* Sidebar */
+  .box_right {
+    background-color: #f9f9f9;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .box_right .titre {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 15px;
+  }
+  
+  .menu_right {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .menu_right li {
+    margin-bottom: 10px;
+  }
+  
+  .menu_right li a {
+    color: #007bff;
+    text-decoration: none;
+  }
+  
+  .menu_right li a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Footer */
+  .bg_footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+  }
+  
+  .bg_footer_in {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  
+  .box_client {
+    margin-bottom: 20px;
+  }
+  
+  .client p {
+    font-size: 18px;
+    color: #fff;
+    margin-bottom: 10px;
+  }
+  
+  .logos img {
+    margin-right: 10px;
+  }
+  
+  .footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .left_footer img {
+    max-width: 100px;
+  }
+  
+  .left_footer p {
+    font-size: 14px;
+    color: #fff;
+    margin: 5px 0;
+  }
+  
+  .right_footer .menu_footer {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+  .right_footer .menu_footer li {
+    margin-left: 15px;
+  }
+  
+  .right_footer .menu_footer li a {
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  .right_footer .menu_footer li a:hover {
+    text-decoration: underline;
+  }
+  
+  .copy {
+    font-size: 12px;
+    color: #fff;
+    text-align: right;
+  }
+  
+  .copy a {
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  .copy a:hover {
+    text-decoration: underline;
+  }
